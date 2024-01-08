@@ -45,12 +45,22 @@ createApp({
         next_image(){
             this.slides[this.current_slide].visibility = '';
             this.current_slide++;
+
+            if (this.current_slide == this.slides.length) {
+                this.current_slide = 0;
+            }
+
             this.slides[this.current_slide].visibility = 'visible';
         },
 
         previous_image(){
             this.slides[this.current_slide].visibility = '';
             this.current_slide--;
+
+            if (this.current_slide == - 1) {
+                this.current_slide = this.slides.length - 1;
+            }
+            
             this.slides[this.current_slide].visibility = 'visible';
         }
     }
