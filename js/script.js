@@ -77,6 +77,15 @@ createApp({
 
             this.slides[this.current_slide].visibility = 'visible'
             this.slides[this.current_slide].activity = 'active'
+        },
+
+        autoplay(){
+            setInterval(this.next_image, 3000);
         }
+    },
+
+    mounted() {
+        this.autoplay()
     }
+
 }).mount('#app');
