@@ -51,6 +51,7 @@ createApp({
     methods: {
         next_image(){
             this.slides[this.current_slide].visibility = '';
+            this.slides[this.current_slide].activity = '';
             this.current_slide++;
 
             if (this.current_slide == this.slides.length) {
@@ -58,10 +59,12 @@ createApp({
             }
 
             this.slides[this.current_slide].visibility = 'visible';
+            this.slides[this.current_slide].activity = 'active';
         },
 
         previous_image(){
             this.slides[this.current_slide].visibility = '';
+            this.slides[this.current_slide].activity = '';
             this.current_slide--;
 
             if (this.current_slide == - 1) {
@@ -69,6 +72,7 @@ createApp({
             }
             
             this.slides[this.current_slide].visibility = 'visible';
+            this.slides[this.current_slide].activity = 'active';
         },
 
         show_image(i){
