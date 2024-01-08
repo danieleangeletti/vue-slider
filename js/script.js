@@ -41,7 +41,9 @@ createApp({
                 }
             ],
 
-            current_slide: 0
+            current_slide: 0,
+
+            clock: null
 
         };
     },
@@ -80,7 +82,15 @@ createApp({
         },
 
         autoplay(){
-            setInterval(this.next_image, 3000);
+            this.clock = setInterval(this.next_image, 3000);
+        },
+
+        stop_autoplay(){
+            clearInterval(this.clock);
+        },
+
+        start_autoplay(){
+            this.clock = setInterval(this.next_image, 3000);
         }
     },
 

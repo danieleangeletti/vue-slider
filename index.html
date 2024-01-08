@@ -14,7 +14,7 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div @mouseover="stop_autoplay" @mouseleave="start_autoplay" class="slider-wrapper" tabindex="0">
 
                 <div :class="'item ' + elem.visibility" v-for="elem in slides">
                     <img :src="elem.image"/>
