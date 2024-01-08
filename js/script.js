@@ -70,14 +70,13 @@ createApp({
         },
 
         show_image(i){
-            for (let index = 0; index < this.slides.length; index++) {
-                this.slides[index].visibility = '';
-                this.slides[index].activity = '';
-            }
+            this.slides[this.current_slide].visibility = '';
+            this.slides[this.current_slide].activity = '';
 
             this.current_slide = i;
-            this.slides[i].visibility = 'visible'
-            this.slides[i].activity = 'active'
+
+            this.slides[this.current_slide].visibility = 'visible'
+            this.slides[this.current_slide].activity = 'active'
         }
     }
 }).mount('#app');
